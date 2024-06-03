@@ -23,10 +23,17 @@ nav {
 
 .center {
   display: flex;
+  flex-direction: column;
+}
+
+.center > .header {
+  margin-top: 3em;
+  margin-bottom: 1em;
+  margin-inline: auto;
+  font-size: 1.5em;
 }
 
 .game-grid {
-  margin-top: 8em;
   margin-inline: auto;
   display: grid;
   grid-template-areas:
@@ -53,6 +60,7 @@ nav {
   font-size: 8em;
   margin-top: auto;
   margin-bottom: auto;
+  pointer-events: none;
 }
 
 .colour-x {
