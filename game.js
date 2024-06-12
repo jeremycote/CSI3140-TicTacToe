@@ -40,9 +40,11 @@ window.addEventListener("load", function () {
 
     slot.addEventListener("click", (event) => {
       console.log("Click");
-      event.target.innerHTML = get_current_player_token_html();
-      is_hovering_valid_slot = false;
-      next_player();
+      if (is_hovering_valid_slot) {
+        event.target.innerHTML = get_current_player_token_html();
+        is_hovering_valid_slot = false;
+        next_player();
+      }
     });
   });
 });
