@@ -9,8 +9,12 @@ function get_current_player_token_html() {
   if (current_player == 0) {
     return "<p class='colour-x'>X</p>";
   } else {
-    return "<p class='colour-o'>X</p>";
+    return "<p class='colour-o'>O</p>";
   }
+}
+
+function next_player() {
+  current_player = (current_player + 1) % 2;
 }
 
 window.addEventListener("load", function () {
@@ -32,6 +36,13 @@ window.addEventListener("load", function () {
       }
 
       is_hovering_valid_slot = false;
+    });
+
+    slot.addEventListener("click", (event) => {
+      console.log("Click");
+      event.target.innerHTML = get_current_player_token_html();
+      is_hovering_valid_slot = false;
+      next_player();
     });
   });
 });
