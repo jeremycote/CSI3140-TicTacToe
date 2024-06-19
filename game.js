@@ -26,7 +26,9 @@ function is_game_over() {
     ) {
       return [i, i + 3, i + 6];
     }
+  }
 
+  for(var i = 0; i < 9; i+=3){
     if (
       slots[i].innerHTML != "" &&
       slots[i].innerHTML == slots[i + 1].innerHTML &&
